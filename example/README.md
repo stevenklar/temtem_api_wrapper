@@ -1,1 +1,0 @@
-# temtem_api_wrapper_example
