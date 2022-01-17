@@ -6,7 +6,7 @@ class _Stats {
   final int def;
   final int spatk;
   final int spdef;
-  final int total;
+  final int? total;
 
   _Stats({
     required this.hp,
@@ -16,7 +16,7 @@ class _Stats {
     required this.def,
     required this.spatk,
     required this.spdef,
-    required this.total,
+    this.total,
   });
 
   factory _Stats.fromJson(Map<String, dynamic> json) => _Stats(
@@ -27,7 +27,7 @@ class _Stats {
         def: json['def'],
         spatk: json['spatk'],
         spdef: json['spdef'],
-        total: json['total'],
+        // total: json['total'],
       );
 
   factory _Stats.fromTvYieldsJson(Map<String, dynamic> json) => _Stats(
@@ -38,7 +38,7 @@ class _Stats {
         def: json['def'],
         spatk: json['spatk'],
         spdef: json['spdef'],
-        total: json['total'],
+        // total: json['total'],
       );
 }
 
@@ -67,9 +67,9 @@ class _Details {
 class Technique {
   final String name;
   final String source;
-  final int levels;
+  final int? levels;
 
-  Technique({required this.name, required this.source, required this.levels});
+  Technique({required this.name, required this.source, this.levels});
 
   factory Technique.fromJson(Map<String, dynamic> json) => Technique(
       name: json['name'], source: json['source'], levels: json['levels']);
@@ -103,42 +103,48 @@ class EvolutionNode {
 }
 
 class _Evolution {
-  final int stage;
-  final List<EvolutionNode> evolutionTree;
+  final int? stage;
+  final List<EvolutionNode>? evolutionTree;
   final bool evolves;
-  final String type;
-  final String description;
+  final String? type;
+  final String? description;
 
   _Evolution({
-    required this.stage,
-    required this.evolutionTree,
+    this.stage,
+    this.evolutionTree,
     required this.evolves,
-    required this.type,
-    required this.description,
+    this.type,
+    this.description,
   });
 
-  factory _Evolution.fromJson(Map<String, dynamic> json) => _Evolution(
-        stage: json['stage'],
-        evolutionTree: List<EvolutionNode>.generate(
-            json['evolutionTree'] == null ? 0 : json['evolutionTree'].length,
-            (index) => EvolutionNode.fromJson(json['evolutionTree'][index])),
-        evolves: json['evolves'],
-        type: json['type'],
-        description: json['description'],
-      );
+  factory _Evolution.fromJson(Map<String, dynamic> json) {
+    if (json['evolves'] == false) {
+      return _Evolution(evolves: false);
+    }
+
+    return _Evolution(
+      stage: json['stage'],
+      evolutionTree: List<EvolutionNode>.generate(
+          json['evolutionTree'] == null ? 0 : json['evolutionTree'].length,
+          (index) => EvolutionNode.fromJson(json['evolutionTree'][index])),
+      evolves: json['evolves'],
+      type: json['type'],
+      description: json['description'],
+    );
+  }
 }
 
 class _FreeTem {
   final int minLevel;
   final int maxLevel;
-  final int minPansuns;
-  final int maxPansuns;
+  final int? minPansuns;
+  final int? maxPansuns;
 
   _FreeTem(
       {required this.minLevel,
       required this.maxLevel,
-      required this.minPansuns,
-      required this.maxPansuns});
+      this.minPansuns,
+      this.maxPansuns});
 
   factory _FreeTem.fromJson(Map<String, dynamic> json) {
     return _FreeTem(
@@ -224,6 +230,7 @@ class TemTemApiTem {
   final String? renderStaticLumaImage;
   final String? renderAnimatedImage;
   final String? renderAnimatedLumaImage;
+  final Map<String, dynamic>? weaknesses;
 
   TemTemApiTem({
     required this.number,
@@ -255,6 +262,7 @@ class TemTemApiTem {
     this.renderStaticLumaImage,
     this.renderAnimatedImage,
     this.renderAnimatedLumaImage,
+    this.weaknesses,
   });
 
   factory TemTemApiTem.fromJson(Map<String, dynamic> json) {
@@ -282,6 +290,7 @@ class TemTemApiTem {
       catchRate: json['catchRate'],
       tvYields: _Stats.fromTvYieldsJson(json['tvYields']),
       gameDescription: json['gameDescription'],
+      weaknesses: json['weaknesses'],
     );
   }
 }

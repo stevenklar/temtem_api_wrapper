@@ -12,6 +12,7 @@ class HttpProvider implements ApiProvider {
     List<String> names = const [],
     List<String> fields = const [],
     List<String> expand = const [],
+    bool weaknesses = false,
   }) {
     String url = '$_baseUrl/temtems?';
     if (names.isNotEmpty) url += 'name=${names.join(",")}';
@@ -22,6 +23,11 @@ class HttpProvider implements ApiProvider {
     if (expand.isNotEmpty) {
       if (names.isNotEmpty || fields.isNotEmpty) url += '&';
       url += 'expand=${expand.join(",")}';
+    }
+    if (weaknesses) {
+      if (names.isNotEmpty || fields.isNotEmpty || expand.isNotEmpty)
+        url += '&';
+      url += 'weaknesses=true';
     }
     return _get(url);
   }
