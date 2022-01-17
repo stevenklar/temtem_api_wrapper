@@ -120,7 +120,7 @@ class HttpProvider implements ApiProvider {
 
   Future<dynamic> _get(String request) async {
     try {
-      final response = await http.get(request);
+      final response = await http.get(Uri.parse(request));
       if (response.statusCode == 200) {
         return jsonDecode(response.body);
       } else {
