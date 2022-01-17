@@ -3,7 +3,8 @@ class TemTemApiTraits {
   final String wikiUrl;
   final String description;
 
-  TemTemApiTraits({this.name, this.wikiUrl, this.description});
+  TemTemApiTraits(
+      {required this.name, required this.wikiUrl, required this.description});
 
   factory TemTemApiTraits.fromJson(Map<String, dynamic> json) {
     return TemTemApiTraits(

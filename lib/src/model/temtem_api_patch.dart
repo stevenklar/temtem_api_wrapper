@@ -3,7 +3,10 @@ class _PatchInfo {
   final List<String> improvements;
   final List<String> features;
 
-  _PatchInfo({this.fixes, this.improvements, this.features});
+  _PatchInfo(
+      {required this.fixes,
+      required this.improvements,
+      required this.features});
 
   factory _PatchInfo.fromJson(Map<String, dynamic> json) => _PatchInfo(
         fixes: List<String>.from(json['fixes']),
@@ -20,11 +23,11 @@ class TemTemApiPatch {
   final _PatchInfo patchInfo;
 
   TemTemApiPatch({
-    this.name,
-    this.version,
-    this.url,
-    this.date,
-    this.patchInfo,
+    required this.name,
+    required this.version,
+    required this.url,
+    required this.date,
+    required this.patchInfo,
   });
 
   factory TemTemApiPatch.fromJson(Map<String, dynamic> json) => TemTemApiPatch(

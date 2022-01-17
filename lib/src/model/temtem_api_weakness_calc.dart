@@ -5,10 +5,10 @@ class TemTemApiWeaknessCalc {
   final double result;
 
   TemTemApiWeaknessCalc({
-    this.attacking,
-    this.defending,
-    this.modifiers,
-    this.result,
+    required this.attacking,
+    required this.defending,
+    required this.modifiers,
+    required this.result,
   });
 
   factory TemTemApiWeaknessCalc.fromJson(Map<String, dynamic> json) =>

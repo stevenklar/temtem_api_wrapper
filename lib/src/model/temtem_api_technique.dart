@@ -3,7 +3,8 @@ class SynergyEffect {
   final String type;
   final int damage;
 
-  SynergyEffect({this.effect, this.type, this.damage});
+  SynergyEffect(
+      {required this.effect, required this.type, required this.damage});
 
   factory SynergyEffect.fromJson(Map<String, dynamic> json) => SynergyEffect(
         effect: json['effect'],
@@ -29,20 +30,20 @@ class TemTemApiTechnique {
   final String description;
 
   TemTemApiTechnique({
-    this.name,
-    this.wikiUrl,
-    this.type,
-    this.classTouch,
-    this.classIcon,
-    this.damage,
-    this.staminaCost,
-    this.hold,
-    this.priority,
-    this.priorityIcon,
-    this.synergy,
-    this.synergyEffects,
-    this.targets,
-    this.description,
+    required this.name,
+    required this.wikiUrl,
+    required this.type,
+    required this.classTouch,
+    required this.classIcon,
+    required this.damage,
+    required this.staminaCost,
+    required this.hold,
+    required this.priority,
+    required this.priorityIcon,
+    required this.synergy,
+    required this.synergyEffects,
+    required this.targets,
+    required this.description,
   });
 
   factory TemTemApiTechnique.fromJson(Map<String, dynamic> json) {

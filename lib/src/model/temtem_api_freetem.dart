@@ -5,10 +5,10 @@ class TemTemApiFreeTem {
   final int reward;
 
   TemTemApiFreeTem({
-    this.temtem,
-    this.level,
-    this.catchRate,
-    this.reward,
+    required this.temtem,
+    required this.level,
+    required this.catchRate,
+    required this.reward,
   });
 
   factory TemTemApiFreeTem.fromJson(Map<String, dynamic> json) =>

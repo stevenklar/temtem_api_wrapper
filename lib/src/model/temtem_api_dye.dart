@@ -6,11 +6,11 @@ class TemTemApiDye {
   final List<String> bundles;
 
   TemTemApiDye({
-    this.wikiImageUrl,
-    this.color,
-    this.name,
-    this.description,
-    this.bundles,
+    required this.wikiImageUrl,
+    required this.color,
+    required this.name,
+    required this.description,
+    required this.bundles,
   });
 
   factory TemTemApiDye.fromJson(Map<String, dynamic> json) => TemTemApiDye(

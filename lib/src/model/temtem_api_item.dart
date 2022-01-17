@@ -11,16 +11,16 @@ class TemTemApiItem {
   final String category;
 
   TemTemApiItem({
-    this.wikiImageUrl,
-    this.name,
-    this.wikiUrl,
-    this.description,
-    this.effect,
-    this.location,
-    this.buyPrice,
-    this.sellPrice,
-    this.quest,
-    this.category,
+    required this.wikiImageUrl,
+    required this.name,
+    required this.wikiUrl,
+    required this.description,
+    required this.effect,
+    required this.location,
+    required this.buyPrice,
+    required this.sellPrice,
+    required this.quest,
+    required this.category,
   });
 
   factory TemTemApiItem.fromJson(Map<String, dynamic> json) => TemTemApiItem(

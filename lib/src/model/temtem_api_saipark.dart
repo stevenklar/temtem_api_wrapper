@@ -4,7 +4,11 @@ class Place {
   final int minSvs;
   final int eggMoves;
 
-  Place({this.temtem, this.lumaRate, this.minSvs, this.eggMoves});
+  Place(
+      {required this.temtem,
+      required this.lumaRate,
+      required this.minSvs,
+      required this.eggMoves});
 
   factory Place.fromJson(Map<String, dynamic> json) => Place(
         temtem: json['temtem'],
@@ -22,11 +26,11 @@ class TemTemApiSaipark {
   final List<Place> water;
 
   TemTemApiSaipark({
-    this.dateRange,
-    this.startDate,
-    this.endDate,
-    this.land,
-    this.water,
+    required this.dateRange,
+    required this.startDate,
+    required this.endDate,
+    required this.land,
+    required this.water,
   });
 
   factory TemTemApiSaipark.fromJson(Map<String, dynamic> json) =>

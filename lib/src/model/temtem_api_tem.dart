@@ -9,14 +9,14 @@ class _Stats {
   final int total;
 
   _Stats({
-    this.hp,
-    this.sta,
-    this.spd,
-    this.atk,
-    this.def,
-    this.spatk,
-    this.spdef,
-    this.total,
+    required this.hp,
+    required this.sta,
+    required this.spd,
+    required this.atk,
+    required this.def,
+    required this.spatk,
+    required this.spdef,
+    required this.total,
   });
 
   factory _Stats.fromJson(Map<String, dynamic> json) => _Stats(
@@ -48,7 +48,11 @@ class _Details {
   final int weightKg;
   final int weightLbs;
 
-  _Details({this.heightCm, this.heightInches, this.weightKg, this.weightLbs});
+  _Details(
+      {required this.heightCm,
+      required this.heightInches,
+      required this.weightKg,
+      required this.weightLbs});
 
   factory _Details.fromJson(Map<String, dynamic> json) {
     return _Details(
@@ -65,7 +69,7 @@ class Technique {
   final String source;
   final int levels;
 
-  Technique({this.name, this.source, this.levels});
+  Technique({required this.name, required this.source, required this.levels});
 
   factory Technique.fromJson(Map<String, dynamic> json) => Technique(
       name: json['name'], source: json['source'], levels: json['levels']);
@@ -80,12 +84,12 @@ class EvolutionNode {
   final Map<String, dynamic> traitMapping;
 
   EvolutionNode({
-    this.number,
-    this.name,
-    this.stage,
-    this.levels,
-    this.trading,
-    this.traitMapping,
+    required this.number,
+    required this.name,
+    required this.stage,
+    required this.levels,
+    required this.trading,
+    required this.traitMapping,
   });
 
   factory EvolutionNode.fromJson(Map<String, dynamic> json) => EvolutionNode(
@@ -106,11 +110,11 @@ class _Evolution {
   final String description;
 
   _Evolution({
-    this.stage,
-    this.evolutionTree,
-    this.evolves,
-    this.type,
-    this.description,
+    required this.stage,
+    required this.evolutionTree,
+    required this.evolves,
+    required this.type,
+    required this.description,
   });
 
   factory _Evolution.fromJson(Map<String, dynamic> json) => _Evolution(
@@ -130,7 +134,11 @@ class _FreeTem {
   final int minPansuns;
   final int maxPansuns;
 
-  _FreeTem({this.minLevel, this.maxLevel, this.minPansuns, this.maxPansuns});
+  _FreeTem(
+      {required this.minLevel,
+      required this.maxLevel,
+      required this.minPansuns,
+      required this.maxPansuns});
 
   factory _FreeTem.fromJson(Map<String, dynamic> json) {
     return _FreeTem(
@@ -152,13 +160,13 @@ class TemLocation {
   final _FreeTem freeTem;
 
   TemLocation({
-    this.location,
-    this.place,
-    this.note,
-    this.island,
-    this.frequency,
-    this.level,
-    this.freeTem,
+    required this.location,
+    required this.place,
+    required this.note,
+    required this.island,
+    required this.frequency,
+    required this.level,
+    required this.freeTem,
   });
 
   factory TemLocation.fromJson(Map<String, dynamic> json) {
@@ -178,7 +186,7 @@ class _GenderRatio {
   final double male;
   final double female;
 
-  _GenderRatio({this.male, this.female});
+  _GenderRatio({required this.male, required this.female});
 
   factory _GenderRatio.fromJson(Map<String, dynamic> json) => _GenderRatio(
         male: double.parse(json['male'].toString()),
@@ -208,37 +216,37 @@ class TemTemApiTem {
   final int catchRate;
   final _Stats tvYields;
   final String gameDescription;
-  final String wikiRenderStaticUrl;
-  final String wikiRenderAnimatedUrl;
-  final String wikiRenderStaticLumaUrl;
-  final String wikiRenderAnimatedLumaUrl;
-  final String renderStaticImage;
-  final String renderStaticLumaImage;
-  final String renderAnimatedImage;
-  final String renderAnimatedLumaImage;
+  final String? wikiRenderStaticUrl;
+  final String? wikiRenderAnimatedUrl;
+  final String? wikiRenderStaticLumaUrl;
+  final String? wikiRenderAnimatedLumaUrl;
+  final String? renderStaticImage;
+  final String? renderStaticLumaImage;
+  final String? renderAnimatedImage;
+  final String? renderAnimatedLumaImage;
 
   TemTemApiTem({
-    this.number,
-    this.name,
-    this.types,
-    this.portraitWikiUrl,
-    this.lumaPortraitWikiUrl,
-    this.wikiUrl,
-    this.stats,
-    this.traits,
-    this.details,
-    this.techniques,
-    this.trivia,
-    this.evolution,
-    this.wikiPortraitUrlLarge,
-    this.lumaWikiPortraitUrlLarge,
-    this.locations,
-    this.icon,
-    this.lumaIcon,
-    this.genderRatio,
-    this.catchRate,
-    this.tvYields,
-    this.gameDescription,
+    required this.number,
+    required this.name,
+    required this.types,
+    required this.portraitWikiUrl,
+    required this.lumaPortraitWikiUrl,
+    required this.wikiUrl,
+    required this.stats,
+    required this.traits,
+    required this.details,
+    required this.techniques,
+    required this.trivia,
+    required this.evolution,
+    required this.wikiPortraitUrlLarge,
+    required this.lumaWikiPortraitUrlLarge,
+    required this.locations,
+    required this.icon,
+    required this.lumaIcon,
+    required this.genderRatio,
+    required this.catchRate,
+    required this.tvYields,
+    required this.gameDescription,
     this.wikiRenderStaticUrl,
     this.wikiRenderAnimatedUrl,
     this.wikiRenderStaticLumaUrl,

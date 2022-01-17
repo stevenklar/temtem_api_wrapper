@@ -6,11 +6,11 @@ class TemTemApiTrainingCourse {
   final String locationType;
 
   TemTemApiTrainingCourse({
-    this.number,
-    this.technique,
-    this.type,
-    this.location,
-    this.locationType,
+    required this.number,
+    required this.technique,
+    required this.type,
+    required this.location,
+    required this.locationType,
   });
 
   factory TemTemApiTrainingCourse.fromJson(Map<String, dynamic> json) =>

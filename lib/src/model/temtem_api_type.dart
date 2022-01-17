@@ -2,7 +2,7 @@ class TemTemApiType {
   final String name;
   final String icon;
 
-  TemTemApiType({this.name, this.icon});
+  TemTemApiType({required this.name, required this.icon});
 
   String get iconUrl => 'https://temtem-api.mael.tech$icon';
 

@@ -12,17 +12,17 @@ class TemTemApiGear {
   final String gameDescription;
 
   TemTemApiGear({
-    this.name,
-    this.wikiUrl,
-    this.wikiIconUrl,
-    this.icon,
-    this.category,
-    this.consumable,
-    this.limitedQuantity,
-    this.purchasable,
-    this.buyPrice,
-    this.description,
-    this.gameDescription,
+    required this.name,
+    required this.wikiUrl,
+    required this.wikiIconUrl,
+    required this.icon,
+    required this.category,
+    required this.consumable,
+    required this.limitedQuantity,
+    required this.purchasable,
+    required this.buyPrice,
+    required this.description,
+    required this.gameDescription,
   });
 
   factory TemTemApiGear.fromJson(Map<String, dynamic> json) => TemTemApiGear(

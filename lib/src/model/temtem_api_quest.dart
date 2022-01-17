@@ -9,14 +9,14 @@ class TemTemApiQuest {
   final String requirements;
 
   TemTemApiQuest({
-    this.name,
-    this.wikiUrl,
-    this.type,
-    this.steps,
-    this.rewards,
-    this.startingLocation,
-    this.startingNPC,
-    this.requirements,
+    required this.name,
+    required this.wikiUrl,
+    required this.type,
+    required this.steps,
+    required this.rewards,
+    required this.startingLocation,
+    required this.startingNPC,
+    required this.requirements,
   });
 
   factory TemTemApiQuest.fromJson(Map<String, dynamic> json) => TemTemApiQuest(

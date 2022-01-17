@@ -9,7 +9,8 @@ class TemTemApiCondition {
   /// The icon field is the path to an image under https://temtem-api.mael.tech.
   final String icon;
 
-  TemTemApiCondition({this.name, this.description, this.icon});
+  TemTemApiCondition(
+      {required this.name, required this.description, required this.icon});
 
   factory TemTemApiCondition.fromJson(Map<String, dynamic> json) =>
       TemTemApiCondition(

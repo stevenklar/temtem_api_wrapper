@@ -11,16 +11,16 @@ class TemTemApiRewards {
   final String endDate;
 
   TemTemApiRewards({
-    this.name,
-    this.quantity,
-    this.wikiUrl,
-    this.wikiImageUrl,
-    this.effectDescription,
-    this.requirement,
-    this.freedTemtem,
-    this.duration,
-    this.startDate,
-    this.endDate,
+    required this.name,
+    required this.quantity,
+    required this.wikiUrl,
+    required this.wikiImageUrl,
+    required this.effectDescription,
+    required this.requirement,
+    required this.freedTemtem,
+    required this.duration,
+    required this.startDate,
+    required this.endDate,
   });
 
   factory TemTemApiRewards.fromJson(Map<String, dynamic> json) =>
