@@ -41,9 +41,10 @@ class TemTemApi {
     List<String> names = const [],
     List<String> fields = const [],
     List<String> expand = const [],
+    bool weaknesses = false,
   }) async {
     final response = await _provider.getTemtems(
-        names: names, fields: fields, expand: expand);
+        names: names, fields: fields, expand: expand, weaknesses: weaknesses);
     final parsedData = response as List;
     return parsedData
         .map<TemTemApiTem>((e) => TemTemApiTem.fromJson(e))

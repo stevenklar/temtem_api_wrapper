@@ -4,6 +4,7 @@ abstract class ApiProvider {
     List<String> names = const [],
     List<String> fields = const [],
     List<String> expand = const [],
+    bool weaknesses = false,
   });
 
   Future<dynamic> getTemtem(int id,
