@@ -127,15 +127,14 @@ class LocalProvider implements ApiProvider {
   }
 
   @override
-  Future<dynamic> getTypes() {
-    // TODO: implement getTypes
-    return _dummyList();
+  Future<dynamic> getTypes() async {
+    return await json.decode(await rootBundle.loadString('assets/types.json'));
   }
 
   @override
-  Future getWeaknesses() {
-    // TODO: implement getWeaknesses
-    return _dummyList();
+  Future<dynamic> getWeaknesses() async {
+    return await json
+        .decode(await rootBundle.loadString('assets/weaknesses.json'));
   }
 
   Future<dynamic> _dummyList() {
