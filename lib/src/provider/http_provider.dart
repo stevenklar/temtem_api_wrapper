@@ -1,11 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:http/browser_client.dart';
-import 'package:http/http.dart';
+
 import 'package:http/io_client.dart';
 import 'package:temtem_api_wrapper/src/api_provider.dart';
-import 'package:http/http.dart' as http;
-import 'package:http/retry.dart';
 
 class HttpProvider implements ApiProvider {
   static const _baseUrl = 'https://temtem-api.mael.tech/api';
