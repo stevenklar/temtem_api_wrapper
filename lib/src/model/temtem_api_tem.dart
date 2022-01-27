@@ -96,7 +96,7 @@ class EvolutionNode {
         number: json['number'],
         name: json['name'],
         stage: json['stage'],
-        levels: json['levels'],
+        levels: json['level'],
         trading: json['trading'],
         traitMapping: json['traitMapping'],
       );
